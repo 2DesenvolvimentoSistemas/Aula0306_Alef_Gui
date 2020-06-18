@@ -43,10 +43,14 @@ public class ConversorGui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        pnlTemperratura.setBackground(new java.awt.Color(153, 0, 51));
+
+        lblTemperatura.setForeground(new java.awt.Color(255, 255, 255));
         lblTemperatura.setText("Conversor de °C: ");
 
         lblResultado.setBackground(new java.awt.Color(204, 0, 51));
         lblResultado.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
 
         btnCalcular.setText("Calcular ");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +59,7 @@ public class ConversorGui extends javax.swing.JFrame {
             }
         });
 
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 255));
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,14 +67,18 @@ public class ConversorGui extends javax.swing.JFrame {
             }
         });
 
+        txtTemperatura.setForeground(new java.awt.Color(255, 255, 255));
         txtTemperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTemperaturaActionPerformed(evt);
             }
         });
 
+        pnlOpcoes.setBackground(new java.awt.Color(153, 0, 102));
         pnlOpcoes.setBorder(javax.swing.BorderFactory.createTitledBorder("Opções "));
+        pnlOpcoes.setForeground(new java.awt.Color(255, 255, 255));
 
+        rbtCelFah.setBackground(new java.awt.Color(153, 0, 51));
         btgOpcoes.add(rbtCelFah);
         rbtCelFah.setSelected(true);
         rbtCelFah.setText("C para F");
@@ -79,6 +88,7 @@ public class ConversorGui extends javax.swing.JFrame {
             }
         });
 
+        rbtFahCel.setBackground(new java.awt.Color(153, 0, 51));
         btgOpcoes.add(rbtFahCel);
         rbtFahCel.setText("F para C");
         rbtFahCel.addActionListener(new java.awt.event.ActionListener() {
@@ -112,26 +122,26 @@ public class ConversorGui extends javax.swing.JFrame {
         pnlTemperratura.setLayout(pnlTemperraturaLayout);
         pnlTemperraturaLayout.setHorizontalGroup(
             pnlTemperraturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTemperraturaLayout.createSequentialGroup()
+            .addGroup(pnlTemperraturaLayout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addGroup(pnlTemperraturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlTemperraturaLayout.createSequentialGroup()
-                        .addContainerGap(28, Short.MAX_VALUE)
-                        .addComponent(lblTemperatura)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTemperraturaLayout.createSequentialGroup()
+                        .addGroup(pnlTemperraturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTemperraturaLayout.createSequentialGroup()
+                                .addComponent(lblTemperatura)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTemperraturaLayout.createSequentialGroup()
+                                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62)))
+                        .addComponent(pnlOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTemperraturaLayout.createSequentialGroup()
+                        .addComponent(btnCalcular)
                         .addGap(18, 18, 18)
-                        .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(pnlTemperraturaLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(pnlOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTemperraturaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCalcular)
-                .addGap(18, 18, 18)
-                .addComponent(btnLimpar)
-                .addGap(131, 131, 131))
+                        .addComponent(btnLimpar)
+                        .addGap(131, 131, 131))))
         );
         pnlTemperraturaLayout.setVerticalGroup(
             pnlTemperraturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,9 +160,9 @@ public class ConversorGui extends javax.swing.JFrame {
                         .addGroup(pnlTemperraturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTemperatura))
-                        .addGap(52, 52, 52)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(143, 143, 143))))
+                        .addGap(49, 49, 49)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
